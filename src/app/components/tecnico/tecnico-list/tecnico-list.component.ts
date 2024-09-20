@@ -49,5 +49,10 @@ export class TecnicoListComponent {
         this.dataSource.paginator = this.paginator;
       })
     }
+
+    applyFilter(event: Event) {
+      const filterValue = (event.target as HTMLInputElement).value;
+      this.dataSource.filter = filterValue.trim().toLowerCase();
+    }
 }
 
