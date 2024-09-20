@@ -3,6 +3,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { Tecnico } from '../../../models/tecnico';
 import { TecnicoService } from '../../../services/tecnico.service';
+import { SelectionModel } from '@angular/cdk/collections';
 
 @Component({
   selector: 'app-tecnico-list',
@@ -29,7 +30,6 @@ export class TecnicoListComponent {
 
     @ViewChild(MatPaginator) paginator: MatPaginator; // acima do construtor
 
-
     constructor(
       private service: TecnicoService
     ){}
@@ -54,5 +54,6 @@ export class TecnicoListComponent {
       const filterValue = (event.target as HTMLInputElement).value;
       this.dataSource.filter = filterValue.trim().toLowerCase();
     }
+    
 }
 
